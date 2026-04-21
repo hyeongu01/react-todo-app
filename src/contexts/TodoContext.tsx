@@ -10,7 +10,9 @@ type TodoListContextType = {
 const TodoListContext = createContext<TodoListContextType | null>(null);
 
 export function TodoListProvider({ children }: { children: React.ReactNode }) {
-  const [todoList, setTodoList] = useState<TodoType[]>([]);
+  const [todoList, setTodoList] = useState<TodoType[]>([
+    { id: 999, title: 'React 학습하기', isDone: false },
+  ]);
 
   function addTodo(todo: TodoType) {
     setTodoList((prev) => [...prev, todo]);

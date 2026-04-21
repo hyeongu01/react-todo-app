@@ -9,7 +9,7 @@ function TodoItem({ id, title, isDone }: TodoItemProps): JSX.Element {
   const { toggleTodo } = useTodoList();
 
   return (
-    <div className={styles.item}>
+    <div className={styles.card}>
       <input
         className={styles.checkbox}
         type={'checkbox'}
@@ -17,8 +17,11 @@ function TodoItem({ id, title, isDone }: TodoItemProps): JSX.Element {
         onChange={() => toggleTodo(id)}
       />
       <span className={styles.title}>{title}</span>
-      <button className={styles.actions}>✏️</button>
-      <button className={styles.actions}>🗑️</button>
+
+      <div className={styles.actions}>
+        <button className={styles.edit}>✎</button>
+        <button className={styles.delete}>✕</button>
+      </div>
     </div>
   );
 }

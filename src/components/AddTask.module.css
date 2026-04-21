@@ -1,23 +1,37 @@
 /* 입력 영역 */
 .input_group {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  gap: 12px;
 }
 
 .input_group input {
-    flex: 1;
-    padding: 14px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 14px;
+  flex: 1;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 14px;
 }
 
 .add_btn {
-    background: #4a6cf7;
+  display: flex;
+  padding: 14px 20px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 12px;
+  background: var(--accent-primary, #4078f5);
+  border: none;
+
+  color: var(--text-on-accent, #fff);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  /* background: #4a6cf7;
     color: white;
     border: none;
     padding: 0 20px;
     border-radius: 10px;
-    cursor: pointer;
+    cursor: pointer; */
 }

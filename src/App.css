@@ -5,6 +5,12 @@
   font-family: 'Pretendard', sans-serif;
 }
 
+:root {
+  --text-primary: #1a1c21;
+  --accent-primary: #4078f5;
+  --text-on-accent: #fff;
+}
+
 body {
   background: #f5f6f8;
   display: flex;
@@ -15,11 +21,18 @@ body {
 
 /* 카드 */
 .container {
+  padding: 10px 5px;
   width: 100%;
   max-width: 600px;
+  margin: 0 auto;
 }
 
 .card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
   background: #fff;
   border-radius: 20px;
   padding: 30px;

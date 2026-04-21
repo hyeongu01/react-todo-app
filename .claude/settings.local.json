@@ -3,7 +3,9 @@
     "allow": [
       "mcp__plugin_figma_figma__create_new_file",
       "mcp__plugin_figma_figma__use_figma",
-      "mcp__plugin_figma_figma__get_screenshot"
+      "mcp__plugin_figma_figma__get_screenshot",
+      "mcp__plugin_figma_figma__get_design_context",
+      "mcp__plugin_figma_figma__get_metadata"
     ]
   }
 }
