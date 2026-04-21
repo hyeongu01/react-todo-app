@@ -18,9 +18,11 @@ function App() {
             <button>완료</button>
           </div>
 
+          <div className={'divider'} />
+
           <TodoList />
 
-          <hr />
+          <div className={'divider'} />
 
           <div className="footer">
             <span>총 5개 중 2개 완료</span>

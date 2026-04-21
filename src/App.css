@@ -12,7 +12,7 @@
 }
 
 body {
-  background: #f5f6f8;
+  background: #f5f7fa;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -36,7 +36,7 @@ body {
   background: #fff;
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
 /* 필터 */
@@ -44,7 +44,6 @@ body {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 20px;
 }
 
 .filters button {
@@ -70,7 +69,6 @@ body {
 .footer {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
   font-size: 14px;
 }
 
@@ -79,4 +77,11 @@ body {
   background: none;
   color: red;
   cursor: pointer;
+}
+
+div .divider {
+  height: 1px;
+  align-self: stretch;
+
+  background: #dee3e8;
 }
