@@ -1,0 +1,25 @@
+.item {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title {
+  text-align: left;
+  flex: 1;
+  width: 100%;
+}
+
+.checkbox {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: pointer;
+}

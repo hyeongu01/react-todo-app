@@ -1,0 +1,21 @@
+/* 리스트 */
+.todo-list {
+  list-style: none;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.todo-list input {
+  margin-right: 10px;
+}
+
+.todo-list span {
+  flex: 1;
+}
