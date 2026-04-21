@@ -10,13 +10,13 @@ function TodoItem({ id, title, isDone }: TodoItemProps): JSX.Element {
 
   return (
     <div className={styles.card}>
-      <input
-        className={styles.checkbox}
-        type={'checkbox'}
-        checked={isDone}
-        onChange={() => toggleTodo(id)}
-      />
-      <span className={styles.title}>{title}</span>
+      <div
+        className={isDone ? styles.checkbox_done : styles.checkbox}
+        onClick={() => toggleTodo(id)}
+      >
+        {isDone ? '✓' : ''}
+      </div>
+      <span className={isDone ? styles.title_done : styles.title}>{title}</span>
 
       <div className={styles.actions}>
         <button className={styles.edit}>✎</button>
