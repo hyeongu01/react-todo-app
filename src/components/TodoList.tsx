@@ -2,11 +2,11 @@ import { type JSX } from 'react';
 import { useTodoList } from '../contexts/TodoContext';
 import TodoItem from './TodoItem';
 import styles from './TodoList.module.css';
-import Footer from './Footer';
 
 function TodoList(): JSX.Element {
   const { filteredList } = useTodoList();
 
+  // TODO: 필터 상태마다 메세지 바꾸기
   if (filteredList.length === 0)
     return (
       <div className={styles['empty-set']}>
@@ -27,10 +27,6 @@ function TodoList(): JSX.Element {
           );
         })}
       </ul>
-
-      <div className={'divider'} />
-
-      <Footer />
     </>
   );
 }

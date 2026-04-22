@@ -27,7 +27,9 @@ function AddTask(): JSX.Element {
     <div className={styles.input_group}>
       <input
         type="text"
-        placeholder="할 일을 입력하세요..."
+        placeholder={
+          isError ? '할 일을 입력해주세요.' : '할 일을 입력하세요...'
+        }
         onChange={handleTextChange}
         value={text}
         className={isError ? styles.error : ''}
@@ -35,9 +37,6 @@ function AddTask(): JSX.Element {
       <button className={styles.add_btn} onClick={handleAddButton}>
         추가
       </button>
-      {isError && (
-        <p className={styles['error-message']}>할 일을 입력해주세요.</p>
-      )}
     </div>
   );
 }

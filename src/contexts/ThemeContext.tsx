@@ -12,6 +12,7 @@ export function ThemeContextProvider({
 }: {
   children: React.ReactNode;
 }) {
+  // TODO: 로컬 스토리지 저장
   const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const toggleTheme = () => {

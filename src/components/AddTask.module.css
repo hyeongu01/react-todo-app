@@ -26,22 +26,14 @@
 
 .input_group .error {
   border: 2px solid var(--status-danger, #e84d3d);
+  ::placeholder {
+    color: var(--status-danger, #e84d3d);
+    opacity: 1;
+  }
 }
 
-.error-message {
-  position: absolute;
-  bottom: -30px;
-  left: 0;
-  right: 0px;
-  z-index: 10; /* 다른 요소들보다 위에 */
-
+.input_group .error::placeholder {
   color: var(--status-danger, #e84d3d);
-  text-align: left;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 }
 
 .add_btn {
