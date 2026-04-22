@@ -14,7 +14,7 @@ function AddTask(): JSX.Element {
 
   function handleAddButton() {
     if (!text.trim()) {
-      setError(!isError);
+      setError(true);
       if (timerRef.current) clearTimeout(timerRef.current);
       timerRef.current = setTimeout(() => setError(false), 3000);
       return;
