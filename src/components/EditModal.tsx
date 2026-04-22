@@ -1,7 +1,6 @@
 import { useEffect, useState, type JSX, useRef, useCallback } from 'react';
 import Portal from './Portal';
 import { useTodoList } from '../contexts/TodoContext';
-import type { TodoType } from '../types/Todo.types';
 import styles from './EditModal.module.css';
 
 type EditModalProps = {
