@@ -27,9 +27,7 @@ function AddTask(): JSX.Element {
     <div className={styles.input_group}>
       <input
         type="text"
-        placeholder={
-          isError ? '할 일을 입력해주세요.' : '할 일을 입력하세요...'
-        }
+        placeholder={isError ? '할 일을 입력해주세요.' : 'ed) 산책하기'}
         onChange={handleTextChange}
         value={text}
         className={isError ? styles.error : ''}
