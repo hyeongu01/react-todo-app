@@ -39,4 +39,10 @@
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
+  opacity: 0.8;
+}
+
+.add_btn:active {
+  transform: scale(0.85);
+  opacity: 1;
 }
