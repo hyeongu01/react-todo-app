@@ -1,13 +1,15 @@
-import { createContext, useState, useContext } from 'react';
+import { createContext, useState, useContext, useMemo } from 'react';
 import { type TodoType } from '../types/Todo.types';
 
 type TodoListContextType = {
   todoList: TodoType[];
   filter: 'all' | 'process' | 'done';
   updateFilter: (newFilter: string) => void;
-  getFilteredList: () => TodoType[];
+  filteredList: TodoType[];
   addTodo: (todo: TodoType) => void;
   toggleTodo: (id: number) => void;
+  deleteDoneTodos: () => void;
+  deleteTodo: (id: number) => void;
 };
 
 const TodoListContext = createContext<TodoListContextType | null>(null);
@@ -25,16 +27,21 @@ export function TodoListProvider({ children }: { children: React.ReactNode }) {
     if (['all', 'process', 'done'].includes(newFilter)) setFilter(temp);
   }
 
-  function getFilteredList(): TodoType[] {
+  const filteredList = useMemo((): TodoType[] => {
     return todoList.filter((todo) => {
       if (filter === 'all') return true;
       if (filter === 'process') return todo.isDone === false;
       if (filter === 'done') return todo.isDone;
     });
-  }
+  }, [todoList, filter]);
 
   function addTodo(todo: TodoType) {
     setTodoList((prev) => [...prev, todo]);
+  }
+
+  function deleteDoneTodos() {
+    const newTodoList = todoList.filter((todo) => !todo.isDone);
+    setTodoList(newTodoList);
   }
 
   function toggleTodo(id: number) {
@@ -47,15 +54,22 @@ export function TodoListProvider({ children }: { children: React.ReactNode }) {
     setTodoList(newList);
   }
 
+  function deleteTodo(id: number) {
+    const newList: TodoType[] = todoList.filter((todo) => todo.id !== id);
+    setTodoList(newList);
+  }
+
   return (
     <TodoListContext.Provider
       value={{
         todoList,
         filter,
-        getFilteredList,
+        filteredList,
         addTodo,
         toggleTodo,
         updateFilter,
+        deleteDoneTodos,
+        deleteTodo,
       }}
     >
       {children}

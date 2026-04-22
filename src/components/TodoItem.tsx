@@ -6,7 +6,7 @@ import { useTodoList } from '../contexts/TodoContext';
 type TodoItemProps = TodoType;
 
 function TodoItem({ id, title, isDone }: TodoItemProps): JSX.Element {
-  const { toggleTodo } = useTodoList();
+  const { toggleTodo, deleteTodo } = useTodoList();
 
   return (
     <div className={styles.card}>
@@ -20,7 +20,9 @@ function TodoItem({ id, title, isDone }: TodoItemProps): JSX.Element {
 
       <div className={styles.actions}>
         <button className={styles.edit}>✎</button>
-        <button className={styles.delete}>✕</button>
+        <button className={styles.delete} onClick={() => deleteTodo(id)}>
+          ✕
+        </button>
       </div>
     </div>
   );

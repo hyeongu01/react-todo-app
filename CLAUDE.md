@@ -35,9 +35,9 @@ Each component has a co-located CSS Module (e.g., `TodoItem.module.css`). Global
 
 ## TODO
 
-- [ ] Filter 동작 구현 — `TodoContext`에 `filter` 상태 추가, `Filter.tsx`와 `TodoList.tsx` 연결
-- [ ] Todo 삭제 — `TodoContext`에 `deleteTodo` 추가, `TodoItem.tsx`에 삭제 버튼
+- [x] Filter 동작 구현 — `TodoContext`에 `filter` 상태 추가, `Filter.tsx`와 `TodoList.tsx` 연결
+- [x] Todo 삭제 — `TodoContext`에 `deleteTodo` 추가, `TodoItem.tsx`에 삭제 버튼
 - [ ] Todo 수정 — `TodoItem.tsx` 인라인 편집
 - [ ] localStorage 연동 — `useEffect`로 `todoList` 저장/불러오기
 - [ ] 다크모드 CSS 검증 — 각 CSS Module에 `.dark` 대응 스타일 확인
-- [ ] 빈 목록 상태 UI — `TodoList.tsx`에 todo 없을 때 안내 문구
+- [x] 빈 목록 상태 UI — `TodoList.tsx`에 todo 없을 때 안내 문구

@@ -4,6 +4,42 @@
   width: 100%;
 }
 
+.empty-set {
+  display: flex;
+  padding: 64px 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  align-self: stretch;
+
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.empty-set .main-text {
+  color: var(--text-primary, #1a1c21);
+  text-align: center;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.empty-set .sub-text {
+  color: var(--text-secondary, #666e78);
+  text-align: center;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
 .todo-list li {
   display: flex;
   align-items: center;

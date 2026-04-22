@@ -3,17 +3,18 @@
   display: flex;
   width: 100%;
   gap: 12px;
+  position: relative;
 }
 
 .input_group input {
-  flex: 1;
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  font-size: 14px;
+  display: flex;
+  padding: 14px 16px;
+  align-items: center;
+  flex: 1 0 0;
 
-  background: var(--bg-input, #333840);
-  border: 1.5px solid var(--border-default, #474d54);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-default, #dee3e8);
+  background: var(--bg-input, #f2f5f7);
 
   color: var(--text-secondary, #99a1ab);
   font-family: Inter;
@@ -21,6 +22,26 @@
   font-style: normal;
   font-weight: 400;
   line-height: 22px; /* 146.667% */
+}
+
+.input_group .error {
+  border: 2px solid var(--status-danger, #e84d3d);
+}
+
+.error-message {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  right: 0px;
+  z-index: 10; /* 다른 요소들보다 위에 */
+
+  color: var(--status-danger, #e84d3d);
+  text-align: left;
+  font-family: Inter;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .add_btn {
