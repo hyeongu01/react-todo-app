@@ -37,6 +37,11 @@ Both providers are mounted in `main.tsx` wrapping `<App>`, with `ThemeContextPro
 - [x] Filter 동작 구현 — `TodoContext`에 `filter` 상태 추가, `Filter.tsx`와 `TodoList.tsx` 연결
 - [x] Todo 삭제 — `TodoContext`에 `deleteTodo` 추가, `TodoItem.tsx`에 삭제 버튼
 - [ ] Todo 수정 — `TodoItem.tsx` 인라인 편집
+- [ ] 포인터 방식 분기 UX — 마우스는 hover로 액션 버튼 표시 (기존), 터치는 왼쪽 스와이프로 수정/삭제 노출
+  - `src/hooks/useInputMethod.ts` 생성 — `matchMedia('pointer: coarse')` 초기값 + `mousemove`/`touchstart` 이벤트로 실시간 감지, `'mouse' | 'touch'` 반환
+  - `TodoList.module.css` — `.todo-list li`에 `overflow: hidden` 추가 (슬라이드 클리핑용)
+  - `TodoItem.module.css` — 터치용 클래스 추가: `.card_wrap` (flex:1), `.card_slide` (width: calc(100% + 88px), flex row), `.actions_touch` (flex-shrink:0, width:88px)
+  - `TodoItem.tsx` — `useInputMethod()` 사용, touch면 `card_wrap > card_slide(translateX) > [card + actions_touch]` 구조로 렌더, `touchStart/Move/End`로 slideX 상태 관리 (절반 이상 밀면 스냅, 아니면 복귀)
 - [x] localStorage 연동 — `useEffect`로 `todoList` 저장/불러오기
 - [x] 다크모드 CSS 검증 — 각 CSS Module에 `.dark` 대응 스타일 확인
 - [x] 빈 목록 상태 UI — `TodoList.tsx`에 todo 없을 때 안내 문구

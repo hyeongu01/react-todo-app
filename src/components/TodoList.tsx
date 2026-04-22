@@ -12,7 +12,6 @@ const MessageWhenEmpty = {
 function TodoList(): JSX.Element {
   const { filteredList, filter } = useTodoList();
 
-  // TODO: 필터 상태마다 메세지 바꾸기
   if (filteredList.length === 0)
     return (
       <div className={styles['empty-set']}>
