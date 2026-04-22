@@ -89,7 +89,7 @@
   background: rgba(92, 107, 245, 0.12);
   border: none;
 
-  color: #5c6bf5;
+  color: var(--action-edit, #5c6bf5);
   font-family: Inter;
   font-size: 18px;
   font-style: normal;

@@ -29,6 +29,7 @@ function EditModal({
     onClose();
   }, [updateTodo, onClose, text, todo]);
 
+  // input 으로 자동 포커스
   useEffect(() => {
     if (!isOpen) return;
 
@@ -39,13 +40,21 @@ function EditModal({
     return () => cancelAnimationFrame(id);
   }, [isOpen]);
 
+  // tsc, enter 키 리스닝
   useEffect(() => {
     if (!isOpen) return;
     const handleEsc = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    const handleEnter = (e: KeyboardEvent) =>
+      e.key === 'Enter' && handleSaveBtn();
     window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [isOpen, onClose]);
+    window.addEventListener('keydown', handleEnter);
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener('keydown', handleEnter);
+    };
+  }, [isOpen, onClose, handleSaveBtn]);
 
+  // 뒤의 항목 스크롤 제거
   useEffect(() => {
     if (!isOpen) return;
     document.body.style.overflow = 'hidden';
@@ -53,14 +62,6 @@ function EditModal({
       document.body.style.overflow = '';
     };
   }, [isOpen]);
-
-  useEffect(() => {
-    if (!isOpen) return;
-    const handleEsc = (e: KeyboardEvent) =>
-      e.key === 'Enter' && handleSaveBtn();
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
-  }, [isOpen, handleSaveBtn]);
 
   if (!isOpen) return null;
   if (text === undefined) {
