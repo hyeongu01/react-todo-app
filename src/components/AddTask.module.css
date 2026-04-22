@@ -21,15 +21,15 @@
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 22px; /* 146.667% */
+  line-height: 22px;
+}
+
+.input_group input:focus::placeholder {
+  opacity: 0;
 }
 
 .input_group .error {
   border: 2px solid var(--status-danger, #e84d3d);
-  ::placeholder {
-    color: var(--status-danger, #e84d3d);
-    opacity: 1;
-  }
 }
 
 .input_group .error::placeholder {

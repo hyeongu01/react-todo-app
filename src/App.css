@@ -85,12 +85,6 @@ body {
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
-/* 완료 상태 */
-.completed span {
-  text-decoration: line-through;
-  color: #aaa;
-}
-
 div .divider {
   height: 1px;
   align-self: stretch;

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 
 type ThemeContextType = {
   theme: 'light' | 'dark';
@@ -13,11 +13,16 @@ export function ThemeContextProvider({
   children: React.ReactNode;
 }) {
   // TODO: 로컬 스토리지 저장
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+  const [theme, setTheme] = useState<'light' | 'dark'>(
+    window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+  );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', theme === 'dark');
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
-    document.documentElement.classList.toggle('dark');
   };
 
   return (
