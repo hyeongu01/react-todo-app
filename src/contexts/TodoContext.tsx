@@ -1,4 +1,4 @@
-import { createContext, useState, useContext, useMemo } from 'react';
+import { createContext, useState, useContext, useMemo, useEffect } from 'react';
 import { type TodoType } from '../types/Todo.types';
 
 type TodoListContextType = {
@@ -15,10 +15,14 @@ type TodoListContextType = {
 const TodoListContext = createContext<TodoListContextType | null>(null);
 
 export function TodoListProvider({ children }: { children: React.ReactNode }) {
-  const [todoList, setTodoList] = useState<TodoType[]>([
-    { id: 999, title: 'React 학습하기', isDone: false },
-    { id: 998, title: '점심 식사', isDone: true },
-  ]);
+  const [todoList, setTodoList] = useState<TodoType[]>(() => {
+    const saved = localStorage.getItem('todoList');
+    return saved ? JSON.parse(saved) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+  }, [todoList]);
 
   const [filter, setFilter] = useState<'all' | 'process' | 'done'>('all');
 
