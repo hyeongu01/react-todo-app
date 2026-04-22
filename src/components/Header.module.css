@@ -19,3 +19,26 @@
   align-items: center;
   align-self: stretch;
 }
+
+.header button {
+  display: flex;
+  width: 44px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 18px;
+  border: 1px solid var(--border-default, #474d54);
+  background: var(--bg-input, #333840);
+
+  color: #000;
+  font-family: Inter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.header button:active {
+  transform: scale(0.85);
+}
