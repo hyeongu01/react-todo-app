@@ -10,6 +10,7 @@ type TodoListContextType = {
   toggleTodo: (id: number) => void;
   deleteDoneTodos: () => void;
   deleteTodo: (id: number) => void;
+  updateTodo: (todo: TodoType) => void;
 };
 
 const TodoListContext = createContext<TodoListContextType | null>(null);
@@ -29,6 +30,14 @@ export function TodoListProvider({ children }: { children: React.ReactNode }) {
   function updateFilter(newFilter: string) {
     const temp = newFilter as 'all' | 'process' | 'done';
     if (['all', 'process', 'done'].includes(newFilter)) setFilter(temp);
+  }
+
+  function updateTodo(todo: TodoType) {
+    const newTodoList = todoList.map((t) => {
+      if (t.id === todo.id) return todo;
+      return t;
+    });
+    setTodoList(newTodoList);
   }
 
   const filteredList = useMemo((): TodoType[] => {
@@ -74,6 +83,7 @@ export function TodoListProvider({ children }: { children: React.ReactNode }) {
         updateFilter,
         deleteDoneTodos,
         deleteTodo,
+        updateTodo,
       }}
     >
       {children}

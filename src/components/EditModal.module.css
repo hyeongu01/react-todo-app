@@ -1,0 +1,102 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  display: flex;
+  width: 360px;
+  height: 186px;
+  padding: 24px;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+
+  border-radius: 16px;
+  background: var(--bg-card, #fff);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  align-self: stretch;
+  color: var(--text-primary, #edf0f2);
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.modal-content input {
+  display: flex;
+  height: 44px;
+  padding: 0 14px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+
+  border-radius: 10px;
+  border: 2px solid var(--border-focus, #6194ff);
+  background: var(--bg-input, #333840);
+
+  color: var(--text-primary, #edf0f2);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.modal-content div {
+  display: flex;
+  width: 100%;
+
+  gap: 10px;
+}
+
+div button {
+  border: none;
+
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+div button:active {
+  transform: scale(0.9);
+  opacity: 0.8;
+}
+
+div .cancel {
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+
+  border-radius: 10px;
+  background: var(--bg-hover, #edf0f5);
+
+  color: var(--text-secondary, #666e78);
+}
+
+div .save {
+  display: flex;
+  height: 42px;
+  justify-content: center;
+  align-items: center;
+  flex: 1 0 0;
+
+  border-radius: 10px;
+  background: var(--accent-primary, #4078f5);
+
+  color: var(--text-on-accent, #fff);
+}
