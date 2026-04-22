@@ -6,17 +6,58 @@
 }
 
 :root {
-  --text-primary: #1a1c21;
+  --bg-primary: #f5f7fa;
+  --bg-card: #ffffff;
+  --bg-input: #f2f5f7;
+  --bg-hover: #edf0f5;
   --accent-primary: #4078f5;
-  --text-on-accent: #fff;
+  --accent-hover: #3366e0;
+  --text-primary: #1a1c21;
+  --text-secondary: #666e78;
+  --text-on-accent: #ffffff;
+  --text-completed: #99a1ab;
+  --border-default: #dee3e8;
+  --border-focus: #4078f5;
+  --status-success: #21b873;
+  --status-danger: #e84d3d;
+  --filter-active-bg: #4078f5;
+  --filter-inactive-bg: #edf0f5;
+  --action-edit: #5c6bf5;
+  --action-delete: #eb4242;
+  --action-edit-bg: #ebeffe;
+  --action-delete-bg: #fde8e8;
+}
+
+.dark {
+  --bg-primary: #1c1f24;
+  --bg-card: #292b33;
+  --bg-input: #333840;
+  --bg-hover: #383d45;
+  --accent-primary: #6194ff;
+  --accent-hover: #73a1ff;
+  --text-primary: #edf0f2;
+  --text-secondary: #99a1ab;
+  --text-on-accent: #ffffff;
+  --text-completed: #737a85;
+  --border-default: #474d54;
+  --border-focus: #6194ff;
+  --status-success: #33cc85;
+  --status-danger: #ff6659;
+  --filter-active-bg: #6194ff;
+  --filter-inactive-bg: #474d57;
+  --action-edit: #808fff;
+  --action-delete: #ff6666;
+  --action-edit-bg: #33385a;
+  --action-delete-bg: #52303a;
 }
 
 body {
-  background: #f5f7fa;
+  background: var(--bg-primary);
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  min-width: 400px;
 }
 
 /* 카드 */
@@ -25,58 +66,29 @@ body {
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  background: var(--bg-primary);
+
+  min-width: 400px;
 }
 
 .card {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 
-  background: #fff;
+  align-items: flex-start;
+
+  background: var(--bg-card, #fff);
   border-radius: 20px;
-  padding: 30px;
+  padding: 40px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
-}
-
-/* 필터 */
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-}
-
-.filters button {
-  border: none;
-  padding: 8px 14px;
-  border-radius: 20px;
-  background: #eee;
-  cursor: pointer;
-}
-
-.filters .active {
-  background: #4a6cf7;
-  color: white;
 }
 
 /* 완료 상태 */
 .completed span {
   text-decoration: line-through;
   color: #aaa;
-}
-
-/* footer */
-.footer {
-  display: flex;
-  justify-content: space-between;
-  font-size: 14px;
-}
-
-.clear {
-  border: none;
-  background: none;
-  color: red;
-  cursor: pointer;
 }
 
 div .divider {

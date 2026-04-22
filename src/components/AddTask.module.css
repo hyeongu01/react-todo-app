@@ -1,6 +1,7 @@
 /* 입력 영역 */
 .input_group {
   display: flex;
+  width: 100%;
   gap: 12px;
 }
 
@@ -10,6 +11,16 @@
   border-radius: 10px;
   border: 1px solid #ddd;
   font-size: 14px;
+
+  background: var(--bg-input, #333840);
+  border: 1.5px solid var(--border-default, #474d54);
+
+  color: var(--text-secondary, #99a1ab);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px; /* 146.667% */
 }
 
 .add_btn {
@@ -28,10 +39,4 @@
   font-style: normal;
   font-weight: 600;
   line-height: 22px;
-  /* background: #4a6cf7;
-    color: white;
-    border: none;
-    padding: 0 20px;
-    border-radius: 10px;
-    cursor: pointer; */
 }

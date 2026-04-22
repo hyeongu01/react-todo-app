@@ -35,6 +35,7 @@ export function TodoListProvider({ children }: { children: React.ReactNode }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useTodoList() {
   const ctx = useContext<TodoListContextType | null>(TodoListContext);
   if (ctx === null) throw new Error('TodoList 컨텍스트가 비어있습니다.');

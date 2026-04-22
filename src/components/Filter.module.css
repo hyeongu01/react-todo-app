@@ -1,0 +1,28 @@
+/* 필터 */
+.filters {
+  display: flex;
+  justify-content: center;
+  align-self: stretch;
+  gap: 8px;
+  align-items: center;
+}
+
+.filters button {
+  border: none;
+  padding: 8px 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  background: var(--filter-inactive-bg, #474d57);
+
+  color: var(--text-secondary, #666e78);
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.filters .active {
+  background: var(--filter-active-bg, #6194ff);
+  color: var(--text-on-accent, #fff);
+}

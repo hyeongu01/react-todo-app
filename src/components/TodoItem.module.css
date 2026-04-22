@@ -15,13 +15,6 @@
   text-align: left;
   flex: 1;
   width: 100%;
-
-  color: var(--text-primary, #1a1c21);
-  font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px; /* 146.667% */
 }
 
 .title_done {
@@ -30,40 +23,38 @@
   width: 100%;
 
   color: var(--text-completed, #99a1ab);
-  font-family: Inter;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 22px; /* 146.667% */
   text-decoration-line: line-through;
 }
 
 .checkbox {
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
   cursor: pointer;
   border-radius: 6px;
-  border: 2px solid var(--border-default, #dee3e8);
+  border: 2px solid var(--border-default);
+  background: transparent;
+  overflow: hidden;
 }
 
 .checkbox_done {
   display: flex;
+  flex-shrink: 0;
   width: 22px;
   height: 22px;
   cursor: pointer;
   justify-content: center;
   align-items: center;
-
   border-radius: 6px;
-  background: var(--accent-primary, #4078f5);
-
-  color: var(--text-on-accent, #fff);
+  border: none;
+  background: var(--accent-primary);
+  color: var(--text-on-accent);
   font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: normal;
   user-select: none;
+  overflow: hidden;
 }
 
 .actions {
